@@ -4,7 +4,7 @@ import DiscoverItems from "./DiscoverItems";
 
 const Discover: React.FC = () => {
   return (
-    <div>
+    <div id="discover_block">
       <DiscoverTitle />
       <DiscoverItems />
     </div>

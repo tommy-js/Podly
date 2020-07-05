@@ -5,7 +5,7 @@ import Discover from "./Discover";
 
 const Main: React.FC = () => {
   return (
-    <div>
+    <div id="main_body_structure">
       <HeaderContainer />
       <Contribute />
       <Discover />
