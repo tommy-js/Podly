@@ -5,10 +5,12 @@ import ContributeTitle from "./ContributeTitle";
 
 const Contribute: React.FC = () => {
   return (
-    <div>
+    <div id="contribute_block">
       <ContributeHeader />
-      <ContributeCreator />
-      <ContributeTitle />
+      <div id="contribute_input_block">
+        <ContributeCreator />
+        <ContributeTitle />
+      </div>
     </div>
   );
 };

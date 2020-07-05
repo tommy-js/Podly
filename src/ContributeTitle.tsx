@@ -1,9 +1,16 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 const ContributeTitle: React.FC = () => {
+  const [title, setTitle] = useState("");
+
   return (
-    <div>
-      <input type="text" placeholder="Title" />
+    <div id="contribute_title">
+      <input
+        onChange={(e) => setTitle(e.target.value)}
+        className="input_element"
+        type="text"
+        placeholder="Title"
+      />
     </div>
   );
 };

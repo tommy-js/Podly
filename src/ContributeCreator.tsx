@@ -1,9 +1,15 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 const ContributeCreator: React.FC = () => {
+  const [creator, setCreator] = useState("");
   return (
-    <div>
-      <input type="text" placeholder="Creator" />
+    <div id="contribute_creator">
+      <input
+        onChange={(e) => setCreator(e.target.value)}
+        className="input_element"
+        type="text"
+        placeholder="Creator"
+      />
     </div>
   );
 };

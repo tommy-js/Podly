@@ -5,7 +5,7 @@ import Image3 from "./Image3";
 
 const HeaderContainer: React.FC = () => {
   return (
-    <div className="main_header_images_block">
+    <div id="main_header_images_block">
       <Image1 />
       <Image2 />
       <Image3 />
