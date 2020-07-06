@@ -1,9 +1,15 @@
 import * as React from "react";
 
-const PodcastPage: React.FC = () => {
+interface Props {
+  creator: string;
+  title: string;
+}
+
+const PodcastPage: React.FC<Props> = (props) => {
   return (
-    <div>
-      <p>Podcast</p>
+    <div className="podcast_page">
+      <h3>{props.creator}</h3>
+      <h4>{props.title}</h4>
     </div>
   );
 };

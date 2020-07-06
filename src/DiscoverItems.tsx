@@ -9,7 +9,7 @@ interface Data {
 }
 
 interface Props {
-  setIdProps: (id: number) => void;
+  setIdProps: (id: number, creator: string, title: string) => void;
 }
 
 const DiscoverItems: React.FC<Props> = (props) => {
@@ -19,8 +19,8 @@ const DiscoverItems: React.FC<Props> = (props) => {
     { creator: "NPR", title: "December 14, 2020", id: 239 },
   ];
 
-  function setId(id: number) {
-    props.setIdProps(id);
+  function setId(id: number, creator: string, title: string) {
+    props.setIdProps(id, creator, title);
   }
 
   return (

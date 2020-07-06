@@ -4,12 +4,12 @@ import Contribute from "./Contribute";
 import Discover from "./Discover";
 
 interface Props {
-  setIdProps: (id: number) => void;
+  setIdProps: (id: number, creator: string, title: string) => void;
 }
 
 const Homepage: React.FC<Props> = (props) => {
-  function setId(id: number) {
-    props.setIdProps(id);
+  function setId(id: number, creator: string, title: string) {
+    props.setIdProps(id, creator, title);
   }
 
   return (
