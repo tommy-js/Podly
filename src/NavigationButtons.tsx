@@ -7,17 +7,15 @@ import ExploreButton from "./ExploreButton";
 const NavigationButtons: React.FC = () => {
   return (
     <div id="nav_buttons">
-      <Router>
-        <Link to="home">
-          <HomeButton />
-        </Link>
-        <Link to="profile">
-          <ProfileButton />
-        </Link>
-        <Link to="explore">
-          <ExploreButton />
-        </Link>
-      </Router>
+      <Link to="/home">
+        <HomeButton />
+      </Link>
+      <Link to="/profile">
+        <ProfileButton />
+      </Link>
+      <Link to="/explore">
+        <ExploreButton />
+      </Link>
     </div>
   );
 };

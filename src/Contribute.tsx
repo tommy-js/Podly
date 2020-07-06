@@ -7,9 +7,10 @@ const Contribute: React.FC = () => {
   const [minHeight, setMinHeight] = useState(true);
   const [blockHeight, setBlockHeight] = useState("100px");
   const [creatorInput, setCreatorInput] = useState("");
+  const [titleInput, setTitleInput] = useState("");
 
   useEffect(() => {
-    if (creatorInput) {
+    if (creatorInput || titleInput) {
       setMinHeight(false);
       setBlockHeight("150px");
     } else {
@@ -22,12 +23,16 @@ const Contribute: React.FC = () => {
     setCreatorInput(creatorVal);
   }
 
+  function checkTitle(titleVal: string) {
+    setTitleInput(titleVal);
+  }
+
   return (
     <div id="contribute_block" style={{ height: blockHeight }}>
       <ContributeHeader />
       <div id="contribute_input_block">
         <ContributeCreator checkCreatorProp={checkCreator} />
-        <ContributeTitle />
+        <ContributeTitle checkTitleProp={checkTitle} />
       </div>
     </div>
   );
