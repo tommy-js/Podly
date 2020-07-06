@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 
-const ContributeCreator: React.FC = () => {
+interface Props {
+  checkCreatorProp: (creator: string) => void;
+}
+
+const ContributeCreator: React.FC<Props> = (props) => {
   const [creator, setCreator] = useState("");
+
+  function checkCreator(val: string) {
+    setCreator(val);
+    props.checkCreatorProp(val);
+  }
+
   return (
     <div id="contribute_creator">
       <input
-        onChange={(e) => setCreator(e.target.value)}
+        onChange={(e) => checkCreator(e.target.value)}
         className="input_element"
         type="text"
         placeholder="Creator"
