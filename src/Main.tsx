@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Homepage from "./Homepage";
 import Navbar from "./Navbar";
 import PodcastPage from "./PodcastPage";
+import Explore from "./Explore";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Main: React.FC = () => {
@@ -31,6 +32,9 @@ const Main: React.FC = () => {
             creator={podcastData.creator}
             title={podcastData.title}
           />
+        </Route>
+        <Route path="/explore">
+          <Explore setIdProps={setId} />
         </Route>
       </Switch>
     </div>
