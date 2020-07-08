@@ -2,22 +2,14 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import IndividualDiscoverItem from "./IndividualDiscoverItem";
 
-interface Data {
-  creator: string;
-  title: string;
-  id: number;
-}
-
 interface Props {
   setIdProps: (id: number, creator: string, title: string) => void;
 }
 
-const Explore: React.FC<Props> = (props) => {
+const ListenedPodcasts: React.FC<Props> = (props) => {
   const basicData = [
     { creator: "Joe Rogan", title: "Elon Musk", id: 23 },
-    { creator: "Jim Halpert", title: "Keeping up with Michael Scott", id: 44 },
     { creator: "NPR", title: "December 14, 2020", id: 239 },
-    { creator: "New Cities", title: "The Start", id: 2293 },
   ];
 
   function setId(id: number, creator: string, title: string) {
@@ -25,8 +17,9 @@ const Explore: React.FC<Props> = (props) => {
   }
 
   return (
-    <div id="explore_page">
-      {basicData.map((el: Data) => (
+    <div>
+      <h2>Podcasts you've listened to</h2>
+      {basicData.map((el) => (
         <Link key={el.id} to={`/${el.id}`}>
           <IndividualDiscoverItem
             creator={el.creator}
@@ -40,4 +33,4 @@ const Explore: React.FC<Props> = (props) => {
   );
 };
 
-export default Explore;
+export default ListenedPodcasts;

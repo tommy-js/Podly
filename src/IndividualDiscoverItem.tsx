@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ReactAudioPlayer from "react-audio-player";
 
 interface Props {
   creator: string;
@@ -17,6 +18,7 @@ const IndividualDiscoverItem: React.FC<Props> = (props) => {
     <div id="individual_discover_item" onClick={goToLink}>
       <p>{props.creator}</p>
       <p>{props.title}</p>
+      <ReactAudioPlayer className="player" autoPlay controls />
     </div>
   );
 };
