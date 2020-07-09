@@ -15,9 +15,11 @@ const IndividualDiscoverItem: React.FC<Props> = (props) => {
   }
 
   return (
-    <div id="individual_discover_item" onClick={goToLink}>
-      <p>{props.creator}</p>
-      <p>{props.title}</p>
+    <div id="individual_discover_item">
+      <div id="individual_discover_container" onClick={goToLink}>
+        <p>{props.creator}</p>
+        <p>{props.title}</p>
+      </div>
       <ReactAudioPlayer className="player" autoPlay controls />
     </div>
   );

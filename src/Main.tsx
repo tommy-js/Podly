@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import PodcastPage from "./PodcastPage";
 import ProfilePage from "./ProfilePage";
 import Explore from "./Explore";
+import Signin from "./Signin";
+import NewAccount from "./NewAccount";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Main: React.FC = () => {
@@ -15,6 +17,7 @@ const Main: React.FC = () => {
     creator: "",
     title: "",
   });
+  const [loggedIn, setLoggedIn] = useState(true);
 
   function setId(id: number, creator: string, title: string) {
     setPodcastData({ id: id, creator: creator, title: title });
@@ -39,6 +42,12 @@ const Main: React.FC = () => {
         </Route>
         <Route path="/explore">
           <Explore setIdProps={setId} />
+        </Route>
+        <Route path="/signin">
+          <Signin />
+        </Route>
+        <Route path="/newaccount">
+          <NewAccount />
         </Route>
       </Switch>
     </div>
