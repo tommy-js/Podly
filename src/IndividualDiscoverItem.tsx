@@ -1,16 +1,24 @@
 import React, { useEffect } from "react";
 import ReactAudioPlayer from "react-audio-player";
+import history from "./history";
 
 interface Props {
   creator: string;
   title: string;
   id: number;
-  setIdProps: (id: number, creator: string, title: string) => void;
+  score: number;
+  setIdProps: (
+    id: number,
+    creator: string,
+    title: string,
+    score: number
+  ) => void;
 }
 
 const IndividualDiscoverItem: React.FC<Props> = (props) => {
   function goToLink() {
-    props.setIdProps(props.id, props.creator, props.title);
+    props.setIdProps(props.id, props.creator, props.title, props.score);
+    history.push(`/${props.id}`);
     console.log(props.id);
   }
 

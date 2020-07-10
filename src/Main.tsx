@@ -14,13 +14,14 @@ const Main: React.FC = () => {
   const [podcastCreator, setPodcastCreator] = useState("");
   const [podcastData, setPodcastData] = useState({
     id: 0,
+    score: 0,
     creator: "",
     title: "",
   });
   const [loggedIn, setLoggedIn] = useState(true);
 
-  function setId(id: number, creator: string, title: string) {
-    setPodcastData({ id: id, creator: creator, title: title });
+  function setId(id: number, creator: string, title: string, score: number) {
+    setPodcastData({ id: id, creator: creator, title: title, score: score });
     console.log(id);
   }
 
@@ -34,6 +35,8 @@ const Main: React.FC = () => {
         <Route path={`/${podcastData.id}`}>
           <PodcastPage
             creator={podcastData.creator}
+            creatorId={0}
+            score={podcastData.score}
             title={podcastData.title}
           />
         </Route>
