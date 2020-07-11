@@ -1,6 +1,7 @@
 import * as React from "react";
 import ProfileHeader from "./ProfileHeader";
 import ListenedPodcasts from "./ListenedPodcasts";
+import Followed from "./Followed";
 import SubmittedReviews from "./SubmittedReviews";
 import SubmittedPodcasts from "./SubmittedPodcasts";
 
@@ -25,6 +26,7 @@ const ProfilePage: React.FC<Props> = (props) => {
   return (
     <div id="profile_page">
       <ProfileHeader username={userData.username} />
+      <Followed />
       <SubmittedPodcasts />
       <ListenedPodcasts setIdProps={setId} />
       <SubmittedReviews />
